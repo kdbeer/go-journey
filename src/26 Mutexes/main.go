@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"sync"
 	"sync/atomic"
@@ -44,5 +45,11 @@ func main() {
 			}
 		}()
 	}
+
+	time.Sleep(time.Millisecond)
+
+	readOpsFinal := atomic.LoadUint64(&readOps)
+	fmt.Println("readOps : ", readOpsFinal)
+	writeOpsFimal := atomic
 
 }
